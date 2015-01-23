@@ -7,9 +7,6 @@
 
       <!-- Header -->
       <div class="post-header">
-        <% if @canDelete: %>
-          <a class="post-delete close" title="Отметить для удаления" href="#">&times;</a>
-        <% end %>
         <a class="post-user label label-info" href="/u/<%= @user %>">@<%= @user %></a>
         <abbr class="post-date label label-reset" title="<%= @formatDateLong @date %>"></abbr>
       </div>
