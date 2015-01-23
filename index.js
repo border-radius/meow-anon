@@ -11,6 +11,17 @@ app.use(express.static(__dirname + '/public/'));
 
 app.get('/api/:method', function (req, res) {
 
+	switch (req.params.method.toLowerCase()) {
+		case 'delete':
+		case 'post':
+		case 'comment':
+		case 'recommend':
+			return res.json({
+				ok: false,
+				desc: ':('
+			});
+	}
+
 	request([
 		'https://bnw.im/api/',
 		req.params.method,
