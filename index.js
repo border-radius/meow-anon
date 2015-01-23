@@ -27,6 +27,7 @@ app.post('/api/:method', function (req, res) {
 
 	switch (req.params.method.toLowerCase()) {
 		case 'delete':
+		case 'recommend':
 			return res.json({
 				ok: false,
 				desc: 'Only for registered users'
