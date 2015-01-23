@@ -6,3 +6,5 @@
 /deb_dist/
 
 /app/scripts/config.coffee
+
+server.json

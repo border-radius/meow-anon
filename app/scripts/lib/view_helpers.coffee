@@ -44,10 +44,10 @@ module.exports =
     localStorage.removeItem @LOGIN_KEY_NAME
 
   isLogged: ->
-    @getLoginKey()?
+    true
 
   getUser: ->
-    localStorage.getItem @USER_KEY_NAME
+    'anonymous'
 
   setUser: (user) ->
     localStorage.setItem @USER_KEY_NAME, user
