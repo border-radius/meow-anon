@@ -1,9 +1,9 @@
 module.exports =
   # Path to the BnW-compatible API host.
-  BNW_API_HOST: "bnw.im"
+  BNW_API_HOST: "localhost:8001"
 
   # API protocol. "http" or "https". "https" is strongly recommended.
-  BNW_API_PROTOCOL: "https"
+  BNW_API_PROTOCOL: "http"
 
   # Path to the BnW-compatible websocket server.
   BNW_WS_HOST: "bnw.im"
