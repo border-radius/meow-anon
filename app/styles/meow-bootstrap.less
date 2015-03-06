@@ -11,7 +11,7 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 // Core variables and mixins
-@import "bower_components/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "app/styles/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "bower_components/bootstrap/less/mixins.less";
 // CSS Reset
 @import "bower_components/bootstrap/less/reset.less";
@@ -166,8 +166,8 @@ blockquote {
     position: absolute;
     left: 0;
     right: 0;
-    background-color: #F5F5F5;
-    border-top: 1px solid #E5E5E5;
+    background-color: #0A0A0A;
+    border-top: 1px solid #1A1A1A;
     margin-top: 110px;
     height: 60px;
     text-align: right;
@@ -250,7 +250,7 @@ blockquote {
 }
 
 div.selected {
-    border: 1px solid #999999;
+    border: 1px solid #666666;
 }
 
 /* Application-related */
@@ -261,7 +261,7 @@ div.selected {
 
 .comment {
     /* Do comment background a bit lighter. */
-    background-color: #FAFAFA;
+    background-color: #050505;
 }
 
 div.avatar {
@@ -270,6 +270,7 @@ div.avatar {
      * What a crap.
      */
     width: 58px;
+    opacity: 0.6;
 }
 
 img.avatar {
@@ -306,7 +307,7 @@ img.avatar {
 .post-footer, .post-footer a, .post-footer a:hover,
 .comment-footer, .comment-footer a, .comment-footer a:hover,
 .post-footer2, .search-item-percent {
-    color: #999999;
+    color: #666666;
 }
 
 .post-info a {
@@ -329,7 +330,7 @@ img.avatar {
 
 .post-delete-marked, .post-delete-marked:hover,
 .comment-delete-marked, .comment-delete-marked:hover {
-    color: #FF0000;
+    color: #00FFFF;
     opacity: 1;
 }
 
@@ -377,7 +378,7 @@ img.avatar {
 }
 
 .help {
-    color: #999999;
+    color: #666666;
 }
 
 .help:hover {
@@ -385,11 +386,11 @@ img.avatar {
 }
 
 .post-added, .comment-added {
-    background-color: #E5E5E5;
+    background-color: #1A1A1A;
 }
 
 .post-deleted, .comment-deleted {
-    background-color: #FFAAAA;
+    background-color: #005555;
 }
 
 .comment-id {
@@ -441,13 +442,13 @@ img.avatar {
     padding: 10px 15px;
     font-size: 20px;
     font-weight: bold;
-    color: #4D7285;
+    color: #B28D7A;
     opacity: 0.3;
     cursor: pointer;
 }
 
 .to-the-top:hover {
-    background: #F0F0F0;
+    background: #0F0F0F;
     text-decoration: none;
     opacity: 0.9;
 }
@@ -494,7 +495,7 @@ img.avatar {
 }
 
 .search-form-query:focus + .icon-search-fix {
-    color: #555555;
+    color: #AAAAAA;
 }
 
 .estimated {
@@ -511,11 +512,12 @@ img.avatar {
 
 /* Violet links*/
 .comment-body a:visited, .post-body a:visited {
-    color: #490A3D;
+    color: #B6F5C2;
 }
 
 .preview {
   display: block;
+  opacity: 0.6;
 }
 
 .preview {
@@ -525,7 +527,7 @@ img.avatar {
         margin: 2px;
         padding: 2px;
         color: #fff;
-        background: #FA1C7C;
+        background: #05E383;
         opacity: 0.5;
         position: absolute;
         z-index: 10;
@@ -558,17 +560,17 @@ img.avatar {
                 left: 50%;
                 border-width: 30px 0 30px 45px;
                 border-style: solid;
-                border-color: transparent transparent transparent rgba(255, 255, 255, 0.7);
+                border-color: transparent transparent transparent rgba(0, 0, 0, 0.7);
             }
 
             &:hover:after {
-                border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
+                border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
             }
 
             img {
                 width: 320px;
                 height: 180px;
-                background: #000;
+                background: #fff;
             }
         }
     }
@@ -588,4 +590,13 @@ img.avatar {
 
 #comment-form .checkbox {
     padding: 5px 10px 0 0;
+}
+
+.img-polaroid {
+background-color: #000;
+border: 1px solid #333;
+border: 1px solid rgba(255,255,255,.2);
+-webkit-box-shadow: 0 1px 3px rgba(255,255,255,.1);
+-moz-box-shadow: 0 1px 3px rgba(255,255,255,.1);
+box-shadow: 0 1px 3px rgba(255,255,255,.1);
 }
