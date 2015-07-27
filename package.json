@@ -8,9 +8,7 @@
   "dependencies": {
     "body-parser": "^1.10.2",
     "express": "^4.11.1",
-    "request": "^2.51.0"
-  },
-  "devDependencies": {
+    "request": "^2.51.0",
     "brunch": "~1.7.13",
     "bower": "~1.3.3",
     "coffee-script": "~1.6.3",
@@ -24,8 +22,12 @@
     "mocha": "~1.17.0",
     "should": "~2.1.1"
   },
+  "devDependencies": {
+
+  },
   "scripts": {
-    "test": "make test-ci"
+    "test": "make test-ci",
+    "postinstall": "cp app/scripts/config.coffee.example app/scripts/config.coffee && bower install && brunch build -P"
   },
   "repository": {
     "type": "git",
@@ -41,5 +43,9 @@
     "bnw",
     "im",
     "xmpp"
-  ]
+  ],
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
 }
