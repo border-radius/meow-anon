@@ -8,7 +8,17 @@
   </div>
 
 <% else: %>
+  
+  <div class="well">
+<!--Гашиш - <strong>587.5 руб/грамм</strong> (4 предложения). Амфетамин - <strong>486 руб/грамм</strong> (5 предложений).-->
+СПБ:
+Гашиш <span style="color:green">&#8600;</span><strong>520 руб/г</strong> (3).
+Амфетамин <span style="color:red">&#8599;</span><strong>527 руб/г</strong> (3).
+Данные <a href="http://ramp2bombkadwvgz.onion/viewtopic.php?id=1258">RAMP</a>.
+<a href="http://shops3jckh3dexzy.onion/">Shops</a>.
+  </div>
 
   <div id="posts"></div>
 
 <% end %>
+
