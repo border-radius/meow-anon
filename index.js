@@ -2,6 +2,7 @@ var express = require('express');
 var request = require('request');
 var url = require('url');
 var bodyParser = require('body-parser');
+var config = require('./server.json');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.get('/api/:method', function (req, res) {
 		case 'delete':
 		case 'post':
 		case 'comment':
+		case 'whoami':
 		case 'recommend':
 			return res.json({
 				ok: false,
@@ -32,7 +34,7 @@ app.get('/api/:method', function (req, res) {
 		'https://bnw.im/api/',
 		req.params.method,
 		'?login=',
-		process.env.BNWLOGIN,
+		config.login,
 		'&',
 		url.parse(req.url).query
 	].join('')).pipe(res);
@@ -44,6 +46,7 @@ app.post('/api/:method', function (req, res) {
 
 	switch (req.params.method.toLowerCase()) {
 		case 'delete':
+		case 'whoami':
 		case 'recommend':
 			return res.json({
 				ok: false,
@@ -54,7 +57,9 @@ app.post('/api/:method', function (req, res) {
 			req.body.anonymous = true;
 	}
 
-	req.body.login = process.env.BNWLOGIN;
+	req.body.login = config.login;
+
+	console.log(req.params.method.toLowerCase(), JSON.stringify(req.body));
 
 	request.post({
 		url: 'https://bnw.im/api/' + req.params.method,
@@ -75,6 +80,6 @@ app.use(function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-app.listen(process.env.PORT);
+app.listen(config.port);
 
-console.log('LAUNCHED ON', process.env.PORT, new Date());
+console.log('LAUNCHED ON', config.port, new Date());
