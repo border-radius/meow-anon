@@ -43,18 +43,19 @@ app.get('/api/:method', function (req, res) {
 
 app.post('/api/:method', function (req, res) {
 
-
-	switch (req.params.method.toLowerCase()) {
-		case 'delete':
-		case 'whoami':
-		case 'recommend':
-			return res.json({
-				ok: false,
-				desc: 'Only for registered users'
-			});
-		case 'post':
-		case 'comment':
-			req.body.anonymous = true;
+	if (!config.notAnonymous) {
+		switch (req.params.method.toLowerCase()) {
+			case 'delete':
+			case 'whoami':
+			case 'recommend':
+				return res.json({
+					ok: false,
+					desc: 'Only for registered users'
+				});
+			case 'post':
+			case 'comment':
+				req.body.anonymous = true;
+		}
 	}
 
 	req.body.login = config.login;
@@ -80,6 +81,6 @@ app.use(function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-app.listen(config.port);
+app.listen(config.port, config.host);
 
-console.log('LAUNCHED ON', config.port, new Date());
+console.log('LAUNCHED ON', config.host + ':' + config.port, new Date());

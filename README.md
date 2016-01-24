@@ -22,7 +22,7 @@ You could easily build and host you own version of bnw-meow. bnw-meow uses Brunc
 
 ```bash
 % sudo npm install -g brunch bower
-% git clone https://github.com/border-radius/meow-anon.git && cd bnw-meow
+% git clone https://github.com/border-radius/meow-anon.git && cd meow-anon
 % npm install && bower install
 % cp app/scripts/config.coffee.example app/scripts/config.coffee
 % cp server.example.json server.json

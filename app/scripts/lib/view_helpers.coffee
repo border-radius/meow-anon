@@ -46,7 +46,7 @@ module.exports =
     true
 
   getUser: ->
-    'anonymous'
+    config.USERNAME
 
   setUser: (user) ->
     localStorage.setItem @USER_KEY_NAME, user
