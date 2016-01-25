@@ -13,3 +13,5 @@ module.exports =
 
   # Thumbify image service URL template.
   THUMBIFY_URL: "https://bnw-thumb.r.worldssl.net/thumb?img=<%= imageUrl %>"
+
+  USERNAME: "anonymous"
